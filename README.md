@@ -24,12 +24,12 @@ Neste workshop, você irá:
   - Aplicar sugestões e interações do GitHub Copilot a um projeto de dados
   - Entender como criar uma ferramenta útil para trabalhar com dados em um ambiente de CI/CD ou pipeline de dados
 
-## :mega: Pré-requisitos
+## Pré-requisitos
 
 Antes de participar do workshop, há somente um pré-requisito: ter uma conta pública do GitHub. Todos os recursos, dependências e dados já fazem parte do repositório.
 - **Pré-requisitos:** Para usar o GitHub Copilot, você deve ter uma assinatura ativa do GitHub Copilot Business ou Enterprise. Inscreva-se para Copilot Free para VS Code apenas para fim de treinamento [Copilot for free para VS Code](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-free-plan?view=vs-2022).
 
-## :books: Recursos
+## Recursos
 
 Apesar de não serem obrigatórios, alguns dos recursos que este workshop aborda estão nestes módulos de aprendizagem da Microsoft:
 
