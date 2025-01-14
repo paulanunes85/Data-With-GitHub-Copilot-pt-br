@@ -1,6 +1,8 @@
 <h1 align="center">Dados + GitHub Copilot para soluções avançadas de dados</h1>
 <em align="center">A combinação perfeita ™</em>
 
+<h5 align="center">Revisão para Português Brasil @paulanunes85</h5>
+
 ## Introdução
 
 Este repositório contém o código-fonte completo do workshop. Você seguirá o guia passo a passo abaixo, completando todas as etapas enquanto trabalha com dados e o GitHub Copilot dentro do Codespaces.
