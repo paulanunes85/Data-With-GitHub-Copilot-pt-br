@@ -1,38 +1,37 @@
-<h1 align="center">Data + GitHub Copilot for advanced data solutions</h1>
-<h5 align="center">@pamelafox @alfredodeza</h3>
+
+<h1 align="center">Dados + GitHub Copilot para soluções avançadas de dados</h1>
+<h5 align="center">@pamelafox @alfredodeza</h5>
+<h5 align="center">Revisão para Português Brasil @paulanunes85</h5>
 
 <p align="center">
-  <a href="#mega-prerequisites">Prerequisites</a> •
-  <a href="#books-resources">Resources</a> •
-  <a href="#learning-objectives">Learning Objectives</a>
+  <a href="#mega-prerequisites">Pré-requisitos</a> •
+  <a href="#books-resources">Recursos</a> •
+  <a href="#learning-objectives">Objetivos de Aprendizagem</a>
 </p>
 
-> [!NOTE]
-> Looking for the workshop? Head over to [the workshop directory](./workshop)
+> [!NOTA]
+> Procurando pelo workshop? Acesse [o diretório do workshop](./workshop)
 
+- **Para quem é**: Qualquer tecnólogo que queira entender recursos avançados do GitHub Copilot aplicados ao trabalho com Python e dados. Engenheiros de Software, Engenheiros de Dados, Cientistas de Dados ou qualquer pessoa que trabalhe com Python ou dados podem se beneficiar deste workshop.
+- **O que você aprenderá**: Você usará recursos avançados do GitHub Copilot e os aplicará a um projeto usando Python e dados. Aprenderá como fazer perguntas sobre o projeto e aplicá-las a outros projetos de dados e programação.
+- **O que você criará**: Uma ferramenta de linha de comando que usa Python e transforma um dataset CSV para que ele possa ser usado em um pipeline de dados ou em um ambiente de CI/CD.
 
-- **Who is this for**: Any tecnologist that wants to understand advanced GitHub Copilot features as it applies to working with Python and data. Software Engineers, Data Engineers, Data Scientists, and anyone working with Python or data might benefit from this workshop too.
-- **What you'll learn**: You'll use advanced GItHub Copilot features and apply it to a project using Python and Data. You will learn how to ask questions about the project and apply them to other data and programming projects.
-- **What you'll build**: A command-line tool that uses Python and transforms a CSV dataset so that it can be used in a data pipeline or a CI/CD environment.
+## Objetivos de Aprendizagem
 
-## Learning Objectives
+Neste workshop, você irá:
 
-In this workshop, you will:
+  - Usar recursos avançados do GitHub Copilot como comandos avançados, chat inline e agentes como `@workspace`
+  - Aplicar sugestões e interações do GitHub Copilot a um projeto de dados
+  - Entender como criar uma ferramenta útil para trabalhar com dados em um ambiente de CI/CD ou pipeline de dados
 
-  - Use advanced GitHub Copilot features like slash commands, inline chat, and agents like `@workspace`
-  - Apply GitHub Copilot suggestions and interactions to a data project
-  - Understand how to build a useful tool to work with data in a CI/CD environment or data pipeline
+## :mega: Pré-requisitos
 
-## :mega: Prerequisites
+Antes de participar do workshop, há somente um pré-requisito: ter uma conta pública do GitHub. Todos os recursos, dependências e dados já fazem parte do repositório.
+- **Pré-requisitos:** Para usar o GitHub Copilot, você deve ter uma assinatura ativa do GitHub Copilot Business ou Enterprise. Inscreva-se para Copilot Free para VS Code apenas para fim de treinamento [Copilot for free para VS Code](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-free-plan?view=vs-2022).
 
-Before joining the workshop, there is only one prerequisite: you must have a public GitHub account. All resources, dependencies, and data are part of the repository itself.
+## :books: Recursos
 
+Apesar de não serem obrigatórios, alguns dos recursos que este workshop aborda estão nestes módulos de aprendizagem da Microsoft:
 
-## :books: Resources
-
-Although not required, some of the features this workshop covers are in these Microsoft Learning modules:
-
-- [Code with GitHub Codespaces](https://learn.microsoft.com/training/modules/code-with-github-codespaces/)
-- [Using advanced GitHub Copilot features](https://learn.microsoft.com/training/modules/advanced-github-copilot/)
-
-
+- [Codifique com GitHub Codespaces](https://learn.microsoft.com/training/modules/code-with-github-codespaces/)
+- [Usando recursos avançados do GitHub Copilot](https://learn.microsoft.com/training/modules/advanced-github-copilot/)
