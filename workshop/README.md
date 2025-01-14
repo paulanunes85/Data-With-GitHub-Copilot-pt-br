@@ -1,93 +1,94 @@
-<h1 align="center">Data + GitHub Copilot for advanced data solutions</h1>
-<em align="center">The perfect pairing ™</em>
+<h1 align="center">Dados + GitHub Copilot para soluções avançadas de dados</h1>
+<em align="center">A combinação perfeita ™</em>
 
-## Intro
+## Introdução
 
-This repository contains the source code for the complete workshop. You will follow the step-by-step guide below, completing all the steps while working with data and GitHub Copilot within Codespaces.
+Este repositório contém o código-fonte completo do workshop. Você seguirá o guia passo a passo abaixo, completando todas as etapas enquanto trabalha com dados e o GitHub Copilot dentro do Codespaces.
 
-> [!NOTE]
-> This repo is intended to give an introduction to various **GitHub Copilot** features, such as **Copilot Chat** and **inline chat**. Hence the step-by-step guides below contain the general description of what needs to be done, and Copilot Chat or inline chat can support you in generating the necessary commands.
+> [!NOTA]
+> Este repositório tem como objetivo apresentar vários recursos do **GitHub Copilot**, como **Copilot Chat** e **chat inline**. Portanto, os guias passo a passo abaixo contêm a descrição geral do que precisa ser feito, e o Copilot Chat ou o chat inline podem ajudar você a gerar os comandos necessários.
 >
-> Each step (where applicable) also contains a `Cheatsheet` which can be used to validate the Copilot suggestion(s) against the correct command.
+> Cada etapa (quando aplicável) também contém um `Cheatsheet` que pode ser usado para validar as sugestões do Copilot em relação ao comando correto.
 >
-> 💡 Play around with different prompts and see how it affects the accuracy of the GitHub Copilot suggestions. For example, when using inline chat, you can use an additional prompt to refine the response without having to rewrite the whole prompt.
+> 💡 Experimente diferentes prompts para ver como isso afeta a precisão das sugestões do GitHub Copilot. Por exemplo, ao usar o chat inline, você pode usar um prompt adicional para refinar a resposta sem precisar refazer todo o prompt.
 
-## Data Project features
+## Funcionalidades do Projeto de Dados
 
-In this workshop, you will be working with data from a CSV file included in this repository, as well as a Python script file that will interact with the CSV file. Here are some features of the project you will work with:
+Neste workshop, você trabalhará com dados de um arquivo CSV incluído neste repositório, além de um script em Python que interage com esse arquivo CSV. Aqui estão algumas das funcionalidades do projeto:
 
-1. Consume a CSV dataset and perform transformations
-1. Identify and implement validations
-1. Create a command-line tool that can be used in CI/CD environments
+1. Consumir um dataset em CSV e realizar transformações
+2. Identificar e implementar validações
+3. Criar uma ferramenta de linha de comando que pode ser usada em ambientes de CI/CD
 
-## Preparation
+## Preparação
 
-This repository is Codespaces-ready and is pre-configured so that you have all dependencies installed including the Visual Studio Code extensions necessary to work with GitHub Copilot and Python:
+Este repositório está pronto para Codespaces e já está pré-configurado para que você tenha todas as dependências instaladas, incluindo as extensões do Visual Studio Code necessárias para trabalhar com GitHub Copilot e Python:
 
 - GitHub Copilot
-- Python extension
-- Pre-installed Python dependencies with an activated Virtual Environment
+- Extensão Python
+- Dependências Python pré-instaladas com um Ambiente Virtual ativado
 
-> [!NOTE]
-> If using this repository in your account or a non-GitHub-Universe organization, you might incur in charges or consumption of your free quoota for Codespaces.
+> [!NOTA]
+> Se você estiver usando este repositório na sua conta ou em uma organização que não seja do GitHub Universe, pode haver custos ou consumo de sua cota gratuita para Codespaces.
 
-### 1. Create a new repository from this template
+### 1. Crie um novo repositório a partir deste template
 
-Progress: [🟢⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪] 1/12 (8%)
+Progresso: [🟢⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪] 1/12 (8%)
 
 ⏳ **~2min**
 
-- Click `Use this template` :point_right: `Create a new repository`
-- Set the owner to the GitHub Workshop organization: `githubuniverseworkshop`
-- Give it a name
-- Set visibility to `Private`
-- Click `Create repository`
+- Clique em `Use this template` :point_right: `Create a new repository`
+- Defina o proprietário como a organização GitHub Workshop: `githubuniverseworkshop`
+- Dê um nome
+- Defina a visibilidade como `Private`
+- Clique em `Create repository`
 
-### 2. Create a Codespace using the provided template
+### 2. Crie um Codespace usando o template fornecido
 
-Progress: [🟢🟢⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪] 2/12 (16%)
+Progresso: [🟢🟢⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪] 2/12 (16%)
 
 ⏳ **~3min**
 
-- In the newly created repo, click `Code` :point_right: `Codespaces` :point_right: `[ellipsis menu]` :point_right: `New with options` :point_right: _Ensure that `Dev container configuration` is set to `Default project configuration`_ :point_right: `Create codespace`
-- ❗If you're having problems launching the Codespace then you can also clone the repo and continue from here in your IDE:
+- No repositório recém-criado, clique em `Code` :point_right: `Codespaces` :point_right: `[ellipsis menu]` :point_right: `New with options` :point_right: _Certifique-se de que `Dev container configuration` esteja definido como `Default project configuration`_ :point_right: `Create codespace`
+
+- ❗Se você estiver tendo problemas para iniciar o Codespace, também pode clonar o repositório e continuar do seu IDE:
 
     ```sh
-    git clone https://github.com/<YOUR_NAME_SPACE>/<YOUR_REPO_NAME>.git
-    cd <YOUR_REPO_NAME>
+    git clone https://github.com/<SEU_NAMESPACE>/<SEU_REPO>.git
+    cd <SEU_REPO>
     ```
 
-    > 📝 **Note:** There is no need to push changes back to the repo during the workshop
+    > 📝 **Nota:** Não há necessidade de enviar (push) as alterações de volta ao repositório durante o workshop
 
-### 3. Verify Python is installed and set correctly
+### 3. Verifique se o Python está instalado e configurado corretamente
 
-Progress: [🟢🟢🟢⚪⚪⚪⚪⚪⚪⚪⚪⚪] 3/12 (25%)
-
-⏳ **~2min**
-
-- Use the command palette to toggle the terminal (search for "Create new terminal")
-- Run `which python` and make sure it points to the Virtual Environment (`home/vscode/venv/bin/python`)
-- Run `which pip` and ensure that it also points to the Virtual Environment (`home/vscode/venv/bin/pip`)
-
-### 4. Run the Python scripts
-
-Progress: [🟢🟢🟢🟢⚪⚪⚪⚪⚪⚪⚪⚪] 4/12 (33%)
+Progresso: [🟢🟢🟢⚪⚪⚪⚪⚪⚪⚪⚪⚪] 3/12 (25%)
 
 ⏳ **~2min**
 
-- Run the `main.py` script and confirm no errors occur:
+- Use o palette de comandos para abrir o terminal (procure por "Create new terminal")
+- Execute `which python` e certifique-se de que ele aponte para o Ambiente Virtual (`home/vscode/venv/bin/python`)
+- Execute `which pip` e confirme que ele também aponte para o Ambiente Virtual (`home/vscode/venv/bin/pip`)
+
+### 4. Execute os scripts Python
+
+Progresso: [🟢🟢🟢🟢⚪⚪⚪⚪⚪⚪⚪⚪] 4/12 (33%)
+
+⏳ **~2min**
+
+- Execute o script `main.py` e confirme se não ocorrem erros:
 
     ```shell
     python main.py
     ```
 
-- Run the `check.py` script and confirm no errors occur:
+- Execute o script `check.py` e confirme se não ocorrem erros:
 
     ```shell
     python check.py
     ```
 
-    There should be some OK and some FAIL lines:
+    Deve haver algumas linhas de OK e outras de FAIL:
 
     ```shell
     [OK  ]   verify_drop_notes
@@ -97,41 +98,42 @@ Progress: [🟢🟢🟢🟢⚪⚪⚪⚪⚪⚪⚪⚪] 4/12 (33%)
     [FAIL]   verify_ratings_to_int - The 'ratings' column was not converted to integers correctly.
     ```
 
-### 5. Open relevant files
+### 5. Abra os arquivos relevantes
 
-Progress: [🟢🟢🟢🟢🟢⚪⚪⚪⚪⚪⚪⚪] 5/12 (41%)
+Progresso: [🟢🟢🟢🟢🟢⚪⚪⚪⚪⚪⚪⚪] 5/12 (41%)
 
 ⏳ **~2min**
 
-GitHub Copilot benefits from having context. One way to enhance context is by opening relevant files.
+O GitHub Copilot se beneficia de ter contexto disponível. Uma forma de aprimorar o contexto é abrir os arquivos relevantes.
 
-- Open the `main.py`, `check.py`, `train.csv`, and `transformed_train.csv` files
+- Abra os arquivos `main.py`, `check.py`, `train.csv` e `transformed_train.csv`
 
-## Development
 
-### 1. See how much you can learn about the project and the data
+## Desenvolvimento
 
-Progress: [🟢🟢🟢🟢🟢🟢⚪⚪⚪⚪⚪⚪] 6/12 (50%) - Half way through!
+### 1. Veja quanto você pode aprender sobre o projeto e os dados
+
+Progresso: [🟢🟢🟢🟢🟢🟢⚪⚪⚪⚪⚪⚪] 6/12 (50%) - Metade do caminho!
 
 ⏳ **~5min**
 
-- Open GitHub Copilot Chat
-- Use the `@workspace` agent to ask Copilot what the `main.py` and `check.py` files are doing
-- Again, with the `@workspace` agent, ask Copilot what is the nature of the data you are going to work with
+- Abra o GitHub Copilot Chat
+- Use o agente `@workspace` para perguntar ao Copilot o que os arquivos `main.py` e `check.py` fazem
+- Novamente, com o agente `@workspace`, pergunte ao Copilot qual é a natureza dos dados com os quais você vai trabalhar
 
-#### 2. Fix the high ratings function
+#### 2. Corrija a função de avaliações altas
 
-Progress: [🟢🟢🟢🟢🟢🟢🟢⚪⚪⚪⚪⚪] 7/12 (58%)
+Progresso: [🟢🟢🟢🟢🟢🟢🟢⚪⚪⚪⚪⚪] 7/12 (58%)
 
 ⏳ **~3min**
 
-- In `main.py` find the `select_high_ratings()` function
-- Insert your cursor in the function signature or body somewhere
-- Open inline chat with `Ctrl-i` or `Cmd-i` (on Mac)
-- Prefix your prompt with the `/explain` slash command
-- Ask why this function might not be working and implement any potential fixes
-- Re-generate `transformed_train.csv` by running `python main.py`
-- Verify the fix by running `python check.py` with this function returning an `OK`
+- Em `main.py`, localize a função `select_high_ratings()`
+- Posicione seu cursor na assinatura ou em algum lugar do corpo da função
+- Abra o chat inline com `Ctrl-i` ou `Cmd-i` (no Mac)
+- Prefixe seu prompt com o comando `/explain`
+- Pergunte por que essa função pode não estar funcionando e implemente as possíveis correções
+- Recrie o arquivo `transformed_train.csv` executando `python main.py`
+- Verifique a correção executando `python check.py`, certificando-se de que essa função retorne um `OK`
 
 <details>
 <summary>Cheatsheet</summary>
@@ -140,32 +142,29 @@ Progress: [🟢🟢🟢🟢🟢🟢🟢⚪⚪⚪⚪⚪] 7/12 (58%)
 
 ```sh
 /explain why this function might not be working correctly?
-```
 
-##### Expected output
+##### Output esperado
 
 ```sh
 Based on the provided code, there are a few potential reasons why the `select_high_ratings` function might not be working correctly:
 
-1. Typo in Column Name: The function checks if the column name 'ratings' exists in the DataFrame `df.columns` If there is a typo in the column name, such as 'rating' instead of 'ratings', the condition `if 'ratings' in df.columns`
-
+1. Erro de digitação no Nome da Coluna: A função verifica se o nome da coluna 'ratings' existe em df.columns. Se houver um erro de digitação, como 'rating' em vez de 'ratings', a condição `if 'ratings' in df.columns`
 ```
 
 </details>
 
-> [!NOTE]
-> Feel free to use the GitHub Copilot Chat to implement or corroborate the fix
+> [!NOTA]
+> Sinta-se à vontade para usar o GitHub Copilot Chat para implementar ou confirmar a correção
 
 #### 3. Fix the one-hot encoding problem
 
-Progress: [🟢🟢🟢🟢🟢🟢🟢🟢⚪⚪⚪⚪] 8/12 (66%)
+Progresso: [🟢🟢🟢🟢🟢🟢🟢🟢⚪⚪⚪⚪] 8/12 (66%)
 
 ⏳ **~3min**
-
-- Select the `drop_and_one_hot_encode_red_wine()` function and open inline chat (Ctrl-i/ Cmd-i)
-- Use the `/fix` slash command to ask GitHub Copilot to suggest a potential fix
-- Re-generate `transformed_train.csv` by running `python main.py`
-- Verify the fix by running `python check.py` with this function returning an `OK`
+- Selecione a função `drop_and_one_hot_encode_red_wine()` e abra o chat inline (Ctrl-i/ Cmd-i)  
+- Use o comando `/fix` para solicitar ao GitHub Copilot que sugira uma possível correção  
+- Gere novamente o arquivo `transformed_train.csv` executando `python main.py`  
+- Verifique a correção executando `python check.py`, certificando-se de que a função retorne `OK`  
 
 <details>
 <summary>Cheatsheet</summary>
@@ -192,18 +191,18 @@ def drop_and_one_hot_encode_red_wine(df):
 
 </details>
 
-#### 4. Fix the ratings conversion to int
+#### 4. Corrija a conversão da coluna de avaliação para inteiro
 
-Progress: [🟢🟢🟢🟢🟢🟢🟢🟢🟢⚪⚪⚪] 9/12 (75%)
+Progresso: [🟢🟢🟢🟢🟢🟢🟢🟢🟢⚪⚪⚪] 9/12 (75%)
 
 ⏳ **~3min**
 
-- If your `verify_ratings_to_int` check is already "OK", then Copilot may have already fixed this issue for you. If not, continue with the following steps.
-- Select the `convert_ratings_to_int()` function and open inline chat (Ctrl-i / Cmd-i)
-- Use the `/explain` slash command to ask GitHub Copilot why this function might not be working correctly
-- Identify the problem and implement the fix
-- Re-generate `transformed_train.csv` by running `python main.py`
-- Verify the fix by running `python check.py` with this function returning an `OK`
+- Se o check `verify_ratings_to_int` já estiver "OK", o Copilot pode ter solucionado o problema. Caso contrário, siga os passos.  
+- Selecione a função `convert_ratings_to_int()` e abra o chat inline (Ctrl-i / Cmd-i).  
+- Use o comando `/explain` para perguntar ao GitHub Copilot por que a função pode não funcionar corretamente.  
+- Identifique o problema e implemente a correção.  
+- Regere `transformed_train.csv` executando `python main.py`.  
+- Verifique a correção executando `python check.py` e certifique-se de que a função retorna `OK`.  
 
 <details>
 <summary>Cheatsheet</summary>
@@ -211,48 +210,47 @@ Progress: [🟢🟢🟢🟢🟢🟢🟢🟢🟢⚪⚪⚪] 9/12 (75%)
 ##### Prompt
 
 ```sh
-This function is not converting the ratings to integers
+Esta função não está convertendo as avaliações para inteiros
 ```
 
-##### Expected output
+##### Saída Esperada
 
 ```python
 def convert_ratings_to_int(df):
     """
-    Convert the 'rating' column from float to integer.
+    Converte a coluna 'rating' de float para inteiro.
     """
     if 'rating' in df.columns:
-        df['rating'] = df['rating'].to_int()
+        df['rating'] = df['rating'].astype(int)
     return df
 ```
 
 </details>
+## Testes
 
-## Testing
+Um projeto Python robusto pode se beneficiar de testes. Você adicionará alguns testes unitários e descobrirá mais sobre como executar esses testes com a ajuda do GitHub Copilot.
 
-A robust Python project can benefit from testing. You will add some unit tests and find more on how to run these tests with the help of GitHub Copilot.
+Certifique-se de ter o terminal aberto executando o comando palette e digitando `toggle terminal`.
 
-Make sure you have the terminal open by running the command palette and typing `toggle terminal`
+### 1. Teste sua CLI
 
-### 1. Test your CLI
-
-Progress: [🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢⚪⚪] 10/12 (83%)
-
-⏳ **~5min**
-
-- This project has the Pytest test runner and framework pre-installed, make sure it is available by running `pytest --version`
-- Run the tests while in the `workshop` directory by using the following command: `pytest -v`
-
-The output should give you a failure.
-
-#### 2. Fix the failing test
-
-Progress: [🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢⚪] 11/12 (91%)
+Progresso: [🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢⚪⚪] 10/12 (83%)
 
 ⏳ **~5min**
 
-- Select the output in the terminal and paste it into GitHub Copilot Chat, prefixing with a request for a fix and an explanation
-- Use the output from the chat to implement a fix in `test_main.py`
+- Este projeto tem o Pytest test runner e framework pré-instalados, certifique-se de que está disponível executando `pytest --version`.
+- Execute os testes enquanto estiver no diretório `workshop` usando o seguinte comando: `pytest -v`.
+
+A saída deve mostrar uma falha.
+
+#### 2. Corrija o teste com falha
+
+Progresso: [🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢⚪] 11/12 (91%)
+
+⏳ **~5min**
+
+- Selecione a saída no terminal e cole-a no GitHub Copilot Chat, prefixando com uma solicitação de correção e explicação.
+- Use a saída do chat para implementar uma correção em `test_main.py`.
 
 <details>
 <summary>Cheatsheet</summary>
@@ -260,44 +258,44 @@ Progress: [🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢⚪] 11/12 (91%)
 ##### Prompt
 
 ```sh
-Fix the test and explain your fix:
-// Copy and paste the output from the terminal here
+Corrija o teste e explique sua correção:
+// Copie e cole a saída do terminal aqui
 ```
 
-##### Expected output
+##### Saída Esperada
 
-The error occurs because the drop_notes function is likely modifying the DataFrame in place, rather than returning a new DataFrame with the 'notes' column dropped. To fix the test, we need to ensure that the drop_notes function returns a new DataFrame without the 'notes' column and then check the columns of this new DataFrame.
+O erro ocorre porque a função drop_notes provavelmente está modificando o DataFrame no local, em vez de retornar um novo DataFrame com a coluna 'notes' removida. Para corrigir o teste, precisamos garantir que a função drop_notes retorne um novo DataFrame sem a coluna 'notes' e, em seguida, verificar as colunas desse novo DataFrame.
 
-Here is the corrected test function:
+Aqui está a função de teste corrigida:
 
 ```python
 def test_drop_notes_column_dropped():
-    # Create a sample DataFrame with 'notes' column
+    # Crie um DataFrame de amostra com a coluna 'notes'
     df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'notes': ['note1', 'note2', 'note3']})
 
-    # Call the drop_notes function and get the result
+    # Chame a função drop_notes e obtenha o resultado
     result = main.drop_notes(df)
     
-    # Assert that 'notes' column in result dataframe is dropped
+    # Verifique se a coluna 'notes' no DataFrame resultante foi removida
     columns = result.columns.to_list()
     assert columns == ['A', 'B']
 ```
 
-By storing the result of the drop_notes function in a new variable and checking its columns, we ensure that the test correctly verifies the behavior of the function.
+Armazenando o resultado da função drop_notes em uma nova variável e verificando suas colunas, garantimos que o teste verifique corretamente o comportamento da função.
 
 </details>
 
-#### 3. Add tests for the one hot encoding function
+#### 3. Adicione testes para a função de one hot encoding
 
-Progress: [🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢] 12/12 (100%) - 🎉 Celebrate!
+Progresso: [🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢] 12/12 (100%) - 🎉 Celebre!
 
 ⏳ **~5min**
 
-- Ensure that the `python check.py` has all OK output, otherwise this step might not work.
-- Select the `drop_and_one_hot_encode_red_wine` function in `main.py`
-- Open inline chat with `Ctrl-i`/`Cmd-i`
-- Use the `/tests` slash command to get suggestions on tests
-- Review the output, accept it, and verify with the `pytest -v` command. All tests should be passing, and you should have more tests than before. Sometimes Copilot will indent the suggested tests incorrectly (nesting them inside an existing test function), so make sure the tests are correctly indented before running them.
+- Certifique-se de que o `python check.py` tenha todas as saídas OK, caso contrário, esta etapa pode não funcionar.
+- Selecione a função `drop_and_one_hot_encode_red_wine` em `main.py`.
+- Abra o chat inline com `Ctrl-i`/`Cmd-i`.
+- Use o comando `/tests` para obter sugestões de testes.
+- Revise a saída, aceite-a e verifique com o comando `pytest -v`. Todos os testes devem passar, e você deve ter mais testes do que antes. Às vezes, o Copilot indenta os testes sugeridos incorretamente (aninhando-os dentro de uma função de teste existente), então certifique-se de que os testes estão corretamente indentados antes de executá-los.
 
 <details>
 <summary>Cheatsheet</summary>
@@ -308,93 +306,66 @@ Progress: [🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢] 12/12 (100%) - 🎉
 /tests
 ```
 
-##### Expected output
-
 ```python
-def test_drop_and_one_hot_encode_red_wine_red_wine_column_created():
-    # Create a sample DataFrame with 'variety' column
+def test_drop_and_one_hot_encode_red_wine_coluna_red_wine_criada():
+    # Crie um DataFrame de amostra com a coluna 'variety'
     df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'variety': ['Red Wine', 'White Wine', 'Red Wine']})
 
-    # Call the drop_and_one_hot_encode_red_wine function
+    # Chame a função drop_and_one_hot_encode_red_wine
     result = main.drop_and_one_hot_encode_red_wine(df)
 
-    # Assert that 'Red_Wine_Red Wine' column is created
+    # Verifique se a coluna 'Red_Wine_Red Wine' foi criada
     assert 'Red_Wine_Red Wine' in result.columns
 
-def test_drop_and_one_hot_encode_red_wine_red_wine_column_encoded():
-    # Create a sample DataFrame with 'variety' column
+def test_drop_and_one_hot_encode_red_wine_coluna_red_wine_codificada():
+    # Crie um DataFrame de amostra com a coluna 'variety'
     df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'variety': ['Red Wine', 'White Wine', 'Red Wine']})
 
-    # Call the drop_and_one_hot_encode_red_wine function
+    # Chame a função drop_and_one_hot_encode_red_wine
     result = main.drop_and_one_hot_encode_red_wine(df)
 
-    # Assert that 'Red_Wine_Red Wine' column is encoded correctly
+    # Verifique se a coluna 'Red_Wine_Red Wine' foi codificada corretamente
     assert result['Red_Wine_Red Wine'].tolist() == [1, 0, 1]
 
-def test_drop_and_one_hot_encode_red_wine_variety_column_dropped():
-    # Create a sample DataFrame with 'variety' column
+def test_drop_and_one_hot_encode_red_wine_coluna_variety_removida():
+    # Crie um DataFrame de amostra com a coluna 'variety'
     df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'variety': ['Red Wine', 'White Wine', 'Red Wine']})
 
-    # Call the drop_and_one_hot_encode_red_wine function
+    # Chame a função drop_and_one_hot_encode_red_wine
     result = main.drop_and_one_hot_encode_red_wine(df)
 
-    # Assert that 'variety' column is dropped
+    # Verifique se a coluna 'variety' foi removida
     assert 'variety' not in result.columns
 
-def test_drop_and_one_hot_encode_red_wine_dataframe_unchanged():
-    # Create a sample DataFrame with 'variety' column
+def test_drop_and_one_hot_encode_red_wine_dataframe_inalterado():
+    # Crie um DataFrame de amostra com a coluna 'variety'
     df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'variety': ['Red Wine', 'White Wine', 'Red Wine']})
 
-    # Call the drop_and_one_hot_encode_red_wine function
+    # Chame a função drop_and_one_hot_encode_red_wine
     result = main.drop_and_one_hot_encode_red_wine(df)
 
-    # Assert that the shape of the DataFrame is unchanged
+    # Verifique se a forma do DataFrame não foi alterada
     assert result.shape == (3, 3)
 
-    # Assert that the original DataFrame is not modified
+    # Verifique se o DataFrame original não foi modificado
     assert 'variety' in df.columns
     assert df.shape == (3, 3)
 ```
 
-</details>
-
-## Bonus
-
-There are a couple of bonus challenges if you've completed all the tasks and your scripts are in good shape.
-
-### Bonus Challenge 1 - Create a robust CLI tool
-
-Progress: [🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢] 12/12 (100%) 🎉  
-Optional: [🚀 Turbo Boost! (1/2) 33%]  
-
-- Use GitHub Copilot chat with the `@workspace` prefix to convert the project into a CLI with options and a help menu
-- Ensure that the prompt specifies no external dependencies and it should only use the standard library
-
-<details>
-<summary>Cheatsheet</summary>
-
-#### Prompt
-
-```shell
-@workspace I want to convert this project into a CLI with a help menu. Help me do this without using any dependencies, just pure Python standard library
-```
-
-#### Expected output
-
 ```python
 def main():
-    parser = argparse.ArgumentParser(description="DataFrame manipulation CLI")
+    parser = argparse.ArgumentParser(description="CLI de manipulação de DataFrame")
     subparsers = parser.add_subparsers(dest="command")
 
-    subparsers.add_parser("drop_notes", help="Drop the 'notes' column from the DataFrame")
-    subparsers.add_parser("select_high_ratings", help="Select rows where the 'rating' column is 90 or higher")
-    subparsers.add_parser("drop_and_one_hot_encode_red_wine", help="One-hot encode 'Red Wine' and drop 'variety' column")
-    subparsers.add_parser("remove_newlines_carriage_returns", help="Remove newlines and carriage returns from string columns")
-    subparsers.add_parser("convert_ratings_to_int", help="Convert the 'rating' column from float to integer")
+    subparsers.add_parser("drop_notes", help="Remove a coluna 'notes' do DataFrame")
+    subparsers.add_parser("select_high_ratings", help="Seleciona linhas onde a coluna 'rating' é 90 ou maior")
+    subparsers.add_parser("drop_and_one_hot_encode_red_wine", help="Codifica 'Red Wine' como one-hot e remove a coluna 'variety'")
+    subparsers.add_parser("remove_newlines_carriage_returns", help="Remove quebras de linha e retornos de carro das colunas de string")
+    subparsers.add_parser("convert_ratings_to_int", help="Converte a coluna 'rating' de float para inteiro")
 
     args = parser.parse_args()
 
-    # Load your DataFrame here
+    # Carregue seu DataFrame aqui
     df = pd.read_csv('workshop/train.csv')
 
     if args.command == "drop_notes":
@@ -410,174 +381,107 @@ def main():
     else:
         parser.print_help()
 
-    # Save the transformed DataFrame
+    # Salva o DataFrame transformado
     df.to_csv('workshop/transformed_train.csv', index=False)
 
 if __name__ == "__main__":
     main()
 ```
+# CLI de Manipulação de DataFrame
 
-</details>
+Este projeto fornece uma interface de linha de comando (CLI) para manipular um DataFrame usando várias operações. A CLI é construída usando a biblioteca padrão do Python e não requer dependências externas.
 
-### Bonus Challenge 2 - Document your project
+## Índice
 
-Progress: [🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢] 12/12 (100%) 🎉  
-Optional: [🚀 Turbo Boost! (1/2) 33%]  
-Optional: [🌟 Extra Points! (2/2) 66%]  
+- [Instalação](#instalação)
+- [Uso](#uso)
+    - [Comandos](#comandos)
+- [Dados](#dados)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
 
-- Create a new `docs/` folder and a file called `README.md`
-- Use GitHub Copilot chat with the `@workspace` prefix to get started documenting your project using Markdown in a README.md
-- In your prompt, ask for help documenting the project goals, the nature of the data in the CSV files, and how the CLI works.
+## Instalação
 
-<details>
-<summary>Cheatsheet</summary>
+1. Clone o repositório:
+        ```sh
+        git clone https://github.com/seuusuario/seu-repo.git
+        cd seu-repo
+        ```
 
-#### Prompt
+2. Configure um ambiente virtual:
+        ```sh
+        python3 -m venv venv
+        source venv/bin/activate
+        ```
 
-```shell
-@workspace help me create a good README.md file in Markdown so that I can document this and help others understand how it works and the nature of the data
-```
+3. Instale os pacotes necessários:
+        ```sh
+        pip install -r workshop/requirements.txt
+        ```
 
-#### Expected output
+## Uso
 
-```markdown
-# DataFrame Manipulation CLI
+Para usar a CLI, navegue até o diretório `workshop` e execute o script `main.py` com o comando desejado.
 
-This project provides a command-line interface (CLI) for manipulating a DataFrame using various operations. The CLI is built using the Python standard library and does not require any external dependencies.
+### Comandos
 
-## Table of Contents
+- `drop_notes`: Remove a coluna 'notes' do DataFrame.
+- `select_high_ratings`: Seleciona linhas onde a coluna 'rating' é 90 ou maior.
+- `drop_and_one_hot_encode_red_wine`: Codifica 'Red Wine' como one-hot e remove a coluna 'variety'.
+- `remove_newlines_carriage_returns`: Remove quebras de linha e retornos de carro das colunas de string.
+- `convert_ratings_to_int`: Converte a coluna 'rating' de float para inteiro.
 
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Commands](#commands)
-- [Data](#data)
-- [Contributing](#contributing)
-- [License](#license)
+### Exemplos
 
-## Installation
+1. Remover a coluna 'notes':
+        ```sh
+        python main.py drop_notes
+        ```
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/your-repo.git
-    cd your-repo
-    ```
+2. Selecionar linhas com altas avaliações:
+        ```sh
+        python main.py select_high_ratings
+        ```
 
-2. Set up a virtual environment:
-    ```sh
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
+3. Codificar 'Red Wine' como one-hot e remover a coluna 'variety':
+        ```sh
+        python main.py drop_and_one_hot_encode_red_wine
+        ```
 
-3. Install the required packages:
-    ```sh
-    pip install -r workshop/requirements.txt
-    ```
+4. Remover quebras de linha e retornos de carro das colunas de string:
+        ```sh
+        python main.py remove_newlines_carriage_returns
+        ```
 
-## Usage
+5. Converter a coluna 'rating' para inteiro:
+        ```sh
+        python main.py convert_ratings_to_int
+        ```
 
-To use the CLI, navigate to the `workshop` directory and run the `main.py` script with the desired command.
+## Dados
 
-### Commands
+Os dados usados neste projeto estão armazenados em arquivos CSV localizados no diretório `workshop`. O arquivo principal é `train.csv`, que contém as seguintes colunas:
 
-- `drop_notes`: Drop the 'notes' column from the DataFrame.
-- `select_high_ratings`: Select rows where the 'rating' column is 90 or higher.
-- `drop_and_one_hot_encode_red_wine`: One-hot encode 'Red Wine' and drop the 'variety' column.
-- `remove_newlines_carriage_returns`: Remove newlines and carriage returns from string columns.
-- `convert_ratings_to_int`: Convert the 'rating' column from float to integer.
+- `notes`: Notas de texto sobre os dados.
+- `ratings`: Avaliações numéricas dos dados.
+- `variety`: A variedade dos dados (por exemplo, 'Red Wine').
 
-### Examples
+Os dados transformados são salvos em `transformed_train.csv` após a aplicação dos comandos da CLI.
 
-1. Drop the 'notes' column:
-    ```sh
-    python main.py drop_notes
-    ```
+## Contribuindo
 
-2. Select rows with high ratings:
-    ```sh
-    python main.py select_high_ratings
-    ```
+Contribuições são bem-vindas! Por favor, siga estes passos para contribuir:
 
-3. One-hot encode 'Red Wine' and drop 'variety' column:
-    ```sh
-    python main.py drop_and_one_hot_encode_red_wine
-    ```
+1. Faça um fork do repositório.
+2. Crie um novo branch (`git checkout -b feature-branch`).
+3. Faça suas alterações.
+4. Faça commit das suas alterações (`git commit -m 'Adicionar nova funcionalidade'`).
+5. Faça push para o branch (`git push origin feature-branch`).
+6. Abra um pull request.
 
-4. Remove newlines and carriage returns from string columns:
-    ```sh
-    python main.py remove_newlines_carriage_returns
-    ```
+## Licença
 
-5. Convert 'rating' column to integer:
-    ```sh
-    python main.py convert_ratings_to_int
-    ```
-
-## Data
-
-The data used in this project is stored in CSV files located in the `workshop` directory. The primary file is `train.csv`, which contains the following columns:
-
-- `notes`: Text notes about the data.
-- `ratings`: Numeric ratings for the data.
-- `variety`: The variety of the data (e.g., 'Red Wine').
-
-The transformed data is saved to `transformed_train.csv` after applying the CLI commands.
-
-## Contributing
-
-Contributions are welcome! Please follow these steps to contribute:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Commit your changes (`git commit -m 'Add new feature'`).
-5. Push to the branch (`git push origin feature-branch`).
-6. Open a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](../LICENSE) file for details.
-```
-
-</details>
-
-### Bonus Challenge 3 - Automate the data transformation
-
-Progress: [🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢] 12/12 (100%) 🎉  
-Optional: [🚀 Turbo Boost! (1/2) 33%]  
-Optional: [🌟 Extra Points! (2/2) 66%]  
-Optional: [🏆 Triple Threat! (2/2) 100%]  
-
-- Create a new file called `transform-data.yaml` in the `.github/workflows/` directory.
-- Use GitHub Copilot chat with the `@workspace` prefix to create a GitHub Action that will transform the data whenever a push or pull request is made to the repository.
-- Open a pull request to test the action. If any errors occur, use the GitHub Copilot chat to help you fix them.
-
-<details>
-<summary>Cheatsheet</summary>
-
-#### Prompt
-
-```shell
-@workspace Generate a GitHub action that transforms the data on every push and pull request 
-```
-
-#### Expected output
-
-```markdown
-To create a GitHub Action that will transform the data using your CLI, you can create a workflow file in the `.github/workflows` directory. Here is an example of a GitHub Action workflow file named `transform-data.yml`:
-
-    ```yaml
-    // Workflow omitted, since this is the final bonus!
-    ```
-
-This workflow will:
-
-* Trigger on pushes to the main branch and on manual dispatch.
-* Check out the repository.
-* Set up Python.
-* Install the necessary dependencies (in this case, pandas).
-* Run the data transformation using the `run_all` command from your CLI.
-* Upload the transformed data as an artifact.
-```
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](../LICENSE) para mais detalhes.
 
 </details>
 
