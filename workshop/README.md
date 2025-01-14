@@ -1,6 +1,7 @@
 <h1 align="center">Dados + GitHub Copilot para soluções avançadas de dados</h1>
 <em align="center">A combinação perfeita ™</em>
 
+<h5 align="center">Elaborado por @pamelafox @alfredodeza</h5>
 <h5 align="center">Revisão para Português Brasil @paulanunes85</h5>
 
 ## Introdução
