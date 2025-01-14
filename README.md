@@ -1,6 +1,6 @@
 
 <h1 align="center">Dados + GitHub Copilot para soluções avançadas de dados</h1>
-<h5 align="center">@pamelafox @alfredodeza</h5>
+<h5 align="center">Elaborado por @pamelafox @alfredodeza</h5>
 <h5 align="center">Revisão para Português Brasil @paulanunes85</h5>
 
 <p align="center">
