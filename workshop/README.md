@@ -490,20 +490,32 @@ Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](../LI
 
 ## Clean-up
 
-### 1. Delete your Codespace
+### 1. Exclua seu Codespace
 
 ⏳ **~1min**
 
-Before deleting, if you wish, you can push your changes. Remember workshop repositories are temporary too.
+Antes de excluir, se desejar, você pode enviar suas alterações. Lembre-se de que os repositórios do workshop também são temporários.
 
-Go to [https://github.com/codespaces](https://github.com/codespaces) and find your current running Codespace and delete it.
+Vá para [https://github.com/codespaces](https://github.com/codespaces) e encontre seu Codespace em execução para excluí-lo.
 
-## Additional resources
+## Recursos Adicionais
 
-If you want to learn more about using GitHub Copilot, check out these resources:
+Se você deseja aprender mais sobre como usar o GitHub Copilot, confira estes recursos:
 
-* [GitHub Copilot Documentation](https://docs.github.com/copilot)
-* [VS Code video series: GitHub Copilot](https://www.youtube.com/playlist?list=PLj6YeMhvp2S7rQaCLRrMnzRdkNdKnMVwg)
-* [Blog: Best practices for prompting Copilot](http://blog.pamelafox.org/2023/06/best-practices-for-prompting-github.html)
+* [Documentação do GitHub Copilot](https://docs.github.com/copilot)
+* [Série de vídeos do VS Code: GitHub Copilot](https://www.youtube.com/playlist?list=PLj6YeMhvp2S7rQaCLRrMnzRdkNdKnMVwg)
+* [Blog: Melhores práticas para orientar o Copilot](http://blog.pamelafox.org/2023/06/best-practices-for-prompting-github.html)
 
-Also check out the [GitHub Foundations learning path](https://learn.microsoft.com/training/paths/github-foundations/) for more resources on GitHub and GitHub Copilot.
+Confira também o [roteiro de aprendizagem GitHub Foundations](https://learn.microsoft.com/training/paths/github-foundations/) para mais recursos sobre GitHub e GitHub Copilot.
+
+## Avisos Legais
+ 
+A Microsoft e quaisquer colaboradores concedem a você uma licença para a documentação da Microsoft e outros conteúdos neste repositório sob a [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode),
+veja [LICENSE](LICENSE) e concedem a você uma licença para qualquer código no repositório sob a  [MIT License](https://opensource.org/licenses/MIT), consulte
+[LICENSE-CODE](LICENSE-CODE)
+ 
+Microsoft, Windows, Microsoft Azure e/ou outros produtos e serviços da Microsoft referenciados na documentação podem ser marcas registradas ou marcas registradas da Microsoft nos Estados Unidos e/ou em outros países. As licenças para este projeto não concedem a você direitos de uso de quaisquer nomes, logotipos ou marcas registradas da Microsoft. As diretrizes gerais de marcas registradas da Microsoft podem ser encontradas em http://go.microsoft.com/fwlink/?LinkID=254653.
+ 
+As informações de privacidade podem ser encontradas em https://privacy.microsoft.com/en-us/
+ 
+A Microsoft e quaisquer colaboradores reservam todos os outros direitos, sejam sob seus respectivos direitos autorais, patentes, ou marcas registradas, seja por implicação, estoppel ou de outra forma.
